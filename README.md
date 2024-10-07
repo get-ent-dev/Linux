@@ -9,6 +9,7 @@
 
 ## Ubuntu Server Command Line ( Basic )
 ### Ubuntu Server Update
+sudo apt update
 ### Ubuntu Server Upgrade
 ### User
 ### Reboot
