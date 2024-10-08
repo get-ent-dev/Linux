@@ -8,6 +8,14 @@
 
 ssh username@ip address
 
+enter password
+
+### Change sudo password
+
+sudo passwd
+
+enter neew password
+
 ## Ubuntu Server Command Line ( Basic )
 
 ### Ubuntu Server Update
