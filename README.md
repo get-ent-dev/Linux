@@ -285,7 +285,50 @@ Open the file in **nano** text editor or any editor of your choice:
 
 The configuration file contains different sections:
 
-- Globals defines some global configuration settings for xrdp.
+- **Globals** defines some global configuration settings for xrdp.
+- **Logging** defines logging subsystem parameters for logs.
+- **Channels** defines multiple channel parameters that RDP supports.
+- **Session types** defines multiple supported session types by xrdp. Every session type configuration is defined as a separate section under its session type name enclosed in square brackets, such as **[Xorg]** and **[XVnc]**. There is no **[Sessions types]** heading in the file; instead, it is written as a comment.
+
+In the configuration file, navigate to the **Session types** section. You will find multiple supported session types and their parameters listed:
+
+By default, the **username** and **password** parameters are set to **ask**, which means the user will be prompted to enter their username and password to connect over RDP. Parameters, such as **name**, **username**, and **password**. can be modified if necessary. For the initial RDP connection to the server, the default configuration will suffice.
+
+Save and close the file when finished.
+
+Now move to your user’s home directory if you are not there already:
+
+> cd ~
+
+Next, you will create a **.xsession** file under **/home/sammy** and add the **xfce4-session** as the session manager to use upon login:
+
+> echo "xfce4-session" | tee .xsession
+
+**tee** writes the echoed string **"xfce4-session"** to the file **.xsession**. The above configuration ensures that **xfce4-session** is used as a session manager upon graphical login request. As a result of installing **xfce** as your desktop environment, **xfce4-session** serves as its session manager. If you don’t include this information in the **.xsession** file, no session manager is chosen, and the RDP session will fail to connect to the graphical display.
+
+Restart the xrdp server:
+
+> sudo systemctl restart xrdp
+
+#### Step 4 — Testing the RDP Connection
+
+In this step, you will test the RDP connection from your local machine. The sections below include actions for testing the connection on Windows, macOS, and Linux machines.
+
+##### Testing the RDP Connection on Windows
+
+To test the connection using the Remote Desktop Connection client on Windows, first launch the Remote Desktop Connection app.
+
+Enter your remote server’s public IP and username into the fillable text boxes for **Computer** and **User** name. You may need to press the down arrow for **Show Options** to input the username:
+
+Press the **Connect** button. If you receive an alert that the **Remote Desktop can't connect to the remote computer**, check that you have turned on the Remote Desktop option in your system settings.
+
+Press **Yes** if you receive the identity verification popup:
+
+Then, enter your remote server’s username (**sammy**) and the password you created for user **sammy** during the initial server setup. Press Ok.
+
+Once you have logged in, you should be able to access your Ubuntu Desktop environment:
+
+Using RDP, you successfully connected to your remote Ubuntu server from your local machine. You can close it with the exit button when you have finished using your graphical desktop.
 
 ### Edit File
 
