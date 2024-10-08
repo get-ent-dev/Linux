@@ -38,9 +38,15 @@ Must update and upgrade server every login to make sure security update
 
 #### Adduser
 
-> adduser newuser
+Adding a user
 
+> sudo adduser newuser
 
+Granting a User Sudo Privileges
+
+> groups newuser
+
+> sudo usermod -aG sudo newuser
 
 ### Reboot
 
