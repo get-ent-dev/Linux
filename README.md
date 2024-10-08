@@ -320,6 +320,8 @@ To test the connection using the Remote Desktop Connection client on Windows, fi
 
 Enter your remote server’s public IP and username into the fillable text boxes for **Computer** and **User** name. You may need to press the down arrow for **Show Options** to input the username:
 
+![gkks66I](https://github.com/user-attachments/assets/57a487b7-4e61-411d-8522-d794749caf93)
+
 Press the **Connect** button. If you receive an alert that the **Remote Desktop can't connect to the remote computer**, check that you have turned on the Remote Desktop option in your system settings.
 
 Press **Yes** if you receive the identity verification popup:
