@@ -36,6 +36,12 @@ Must update and upgrade server every login to make sure security update
 
 ### User
 
+#### Adduser
+
+adduser > newuser
+
+
+
 ### Reboot
 
 > sudo reboot
