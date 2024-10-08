@@ -218,7 +218,72 @@ At the bottom, add the line that specifies your new value:
 
 Save and close the file when you are finished.
 
+##### Conclusion
+
+Following the steps in this guide will give you some breathing room in cases that would otherwise lead to out-of-memory exceptions. Swap space can be incredibly useful in avoiding some of these common problems.
+
+If you are running into OOM (out of memory) errors, or if you find that your system is unable to use the applications you need, the best solution is to optimize your application configurations or upgrade your server.
+
+
 ### Remote Desktop ( xRDP )
+
+**Remote Desktop Protocol (RDP)** is a network protocol developed by Microsoft that allows users to remotely access and interact with the graphical user interface of a remote Windows server. RDP works on the client-server model, where an RDP client is installed on a local machine, and an RDP server is installed on the remote server.
+
+RDP is widely used for Windows remote connections, but you can also access and interact with the graphical user interface of a remote Linux server by using a tool like **xrdp**, an open-source implementation of the RDP server.
+
+In this tutorial, you will install and configure an RDP server using xrdp on a Ubuntu 22.04 server and access it using an RDP client from your local machine. You will understand how to establish access to a remote Linux server by configuring and using an RDP connection.
+
+#### Step 1 — Installing a Desktop Environment on Ubuntu
+
+In this step, you will install and configure a desktop environment on your Ubuntu server. By default, an Ubuntu server comes with a terminal environment only. A desktop environment will need to be installed to access a user interface.
+
+From the available options for Ubuntu, you will install the **Xfce** desktop environment. Xfce offers a lightweight, user-friendly desktop environment for Linux-based systems.
+
+To begin, connect to your server using SSH and update the list of available packages using the following command:
+
+> sudo apt update
+
+Next, install the **xfce** and **xfce-goodies** packages on your server:
+
+> sudo apt install xfce4 xfce4-goodies -y
+
+You will be prompted to choose a display manager, which is a program that manages graphical login mechanisms and user sessions. You can select any option from the list of available display managers, but this tutorial will use **gdm3**.
+
+After installing the desktop environment, you will now install xrdp on your server.
+
+#### Step 2 — Installing xrdp on Ubuntu
+
+xrdp is an open-source implementation of the RDP server that allows RDP connections for Linux-based servers. In this step, you will install the xrdp on your Ubuntu server.
+
+To install xrdp, run the following command in the terminal:
+
+> sudo apt install xrdp -y
+
+After installing xrdp, verify the status of xrdp using **systemctl**:
+
+> sudo systemctl status xrdp
+
+This command will show the status as **active (running)**:
+
+If the status of xrdp is **not running**, you may have to start the service manually with this command:
+
+> sudo systemctl start xrdp
+
+After executing the above command, verify the status again to ensure xrdp is in a **running** state.
+
+You have now installed xrdp on your server. Next, you will review the xrdp configuration to accept connections from remote clients.
+
+#### Step 3 — Configuring xrdp and Updating Your Firewall
+
+In this step, you will review the default configuration of xrdp, which is stored under **/etc/xrdp/xrdp.ini**, and add a configuration for an RDP connection. You will also update the firewall settings.
+
+**xrdp.ini** is the default configuration file to set up RDP connections to the xrdp server. The configuration file can be modified and customized to meet the RDP connection requirements.
+
+Open the file in **nano** text editor or any editor of your choice:
+
+> sudo nano /etc/xrdp/xrdp.ini
+
+
 
 ### Edit File
 
