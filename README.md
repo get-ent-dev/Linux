@@ -11,7 +11,7 @@
 ### Ubuntu Server Update
 sudo apt update
 ### Ubuntu Server Upgrade
-sudo apt upgrade
+' sudo apt upgrade '
 ### Update & Upgrade Combination
 sudo apt update && sudo apt upgrade -y
 
