@@ -8,7 +8,7 @@
 
 > ssh **username**@**ip address**
 
-> enter password
+enter password
 
 ### Change sudo password
 
