@@ -14,7 +14,7 @@
 
 > sudo passwd
 
-> enter neew password
+> enter new password
 
 ## Ubuntu Server Command Line ( Basic )
 
