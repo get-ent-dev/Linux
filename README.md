@@ -106,6 +106,10 @@ The best way of creating a swap file is with the fallocate program. This command
 
 Since the server in our example has 1G of RAM, we will create a 1G file in this guide. Adjust this to meet the needs of your own server:
 
+Disable running swapfile
+
+> sudo swapoff -a
+
 > sudo fallocate -l 1G /swapfile
 
 We can verify that the correct amount of space was reserved by typing:
