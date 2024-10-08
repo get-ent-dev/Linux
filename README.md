@@ -6,7 +6,7 @@
 
 ### Port 22 - SSH
 
-ssh username@ip address
+> ssh username@ip address
 
 enter password
 
