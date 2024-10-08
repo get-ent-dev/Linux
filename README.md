@@ -60,9 +60,9 @@ Granting a User Sudo Privileges
 
 ### Edit File
 
-> cd *to file directories*
+> cd **to file directories**
 
-> sudo nano *filename**
+> sudo nano **filename**
 
 ### Making New File
 
