@@ -283,7 +283,9 @@ Open the file in **nano** text editor or any editor of your choice:
 
 > sudo nano /etc/xrdp/xrdp.ini
 
+The configuration file contains different sections:
 
+- Globals defines some global configuration settings for xrdp.
 
 ### Edit File
 
