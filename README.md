@@ -273,7 +273,7 @@ After executing the above command, verify the status again to ensure xrdp is in 
 
 You have now installed xrdp on your server. Next, you will review the xrdp configuration to accept connections from remote clients.
 
-#### Step 3 — Configuring xrdp and Updating Your Firewall
+#### Step 3 — Configuring xrdp
 
 In this step, you will review the default configuration of xrdp, which is stored under **/etc/xrdp/xrdp.ini**, and add a configuration for an RDP connection. You will also update the firewall settings.
 
@@ -352,6 +352,22 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 ## Ubuntu Server Networking
 
 ### Firewall
+
+You will configure your firewall to allow remote connections from your public IP on port **3389**. An RDP connection serves on TCP/IP port **3389**. To access the remote server over RDP, you must allow port **3389** in your firewall.
+
+First, find the public IP for your local machine:
+
+> curl ifconfig.me
+
+Next, allow access to the RDP port **3389** on your remote server, replacing your_local_ip with the output of the last command:
+
+> sudo ufw allow from your_local_ip/32 to any port 3389
+
+Verify the status of your **UFW** firewall:
+
+> sudo ufw status
+
+You have now enabled port **3389** to accept connections from your public IP. Next, you will test your local machine’s RDP connection to your remote server.
 
 ### Ping
 
