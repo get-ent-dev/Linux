@@ -3,6 +3,63 @@
 
 ## Ubuntu Server Setup
 
+1. Insert the installation disc into the DVD drive and restart the computer. Then the language selection screen will be displayed as shown below, so select the language you want to use. In this example, we will proceed in English.
+
+![1](https://github.com/user-attachments/assets/e92e03ae-4470-4940-af40-91c5188a188a)
+
+2. Select a keyboard layout. You can use the tab key to switch between items, the Enter key to display the list, and the arrow keys to select.
+
+![2](https://github.com/user-attachments/assets/1783f44a-838f-451d-9694-fa66ecffb88d)
+
+3. Select the Ubuntu server configuration you want to install. The upper row is a general server configuration that includes frequently used software, and the lower row is the minimum server set.
+
+![3](https://github.com/user-attachments/assets/452fd03e-766b-4df5-808a-1476721c3698)
+
+4. This is the item for network connections. If there is a DHCP server running in the local network, it will be obtained automatically, so you can proceed as it is.
+
+![4](https://github.com/user-attachments/assets/c5916a6d-7be2-4f24-901d-9cf9f42bda54)
+
+5. 	If necessary, enter the address of the proxy server. If you don't need it, you can leave it blank.
+
+![5](https://github.com/user-attachments/assets/f8534141-772f-4a41-b234-eedfd99de0dd)
+
+6. Enter the address of the mirror server that you want to refer to when updating the Ubuntu server or installing new packages. Normally, the source location automatically selects a nearby mirror server, so you can continue.
+
+![6](https://github.com/user-attachments/assets/142f42d1-9459-4b42-ae8b-af65cea0aba1)
+
+7. Storage settings. Set the partition layout of the disk and so on. If you don't have any special requirements, you can just proceed
+
+![7](https://github.com/user-attachments/assets/e4c9d898-802a-4765-a9f4-7f1708c68fd9)
+
+8. This is the screen to confirm the storage settings. If it's OK, choose Done to continue.
+
+![8](https://github.com/user-attachments/assets/e2e5ff49-ca54-46f1-838e-8ea036d0351c)
+
+9. 	It is a confirmation that you can proceed with the installation. If there is existing data on the disk, it will be overwritten, and so on. If you're satisfied, click Continue.
+
+![9](https://github.com/user-attachments/assets/48cb7523-403c-43d1-9455-93c0726b9b4e)
+
+10. This is the setting of the user account that will be the administrator. Enter a name and password of your choice and proceed to the next step.
+
+![10](https://github.com/user-attachments/assets/04cf4cae-1038-41c1-ac6e-dde3605ea5ac)
+
+11. You have the choice to install an SSH server. Please select according to your needs. In this example, we will proceed without making a selection.
+
+![11](https://github.com/user-attachments/assets/a5fe542d-0ae4-416a-a608-54a536451511)
+
+12. 	A selection of applications and environment sets that are commonly used for server applications. Please select according to your needs. In this example, we proceed without selecting anything.
+
+![12](https://github.com/user-attachments/assets/0b5a3676-70f9-4db8-adc3-52a6ac533587)
+
+13. When the installation is complete, the following screen will appear. Choose Reboot Now to finish.
+
+![13](https://github.com/user-attachments/assets/38305255-2399-4c2a-a4fc-1fbada7059c0)
+
+14. After the installation is complete, reboot and the login screen will be displayed as shown below. Authenticate and log in with the user and password you set during installation. This completes the installation of Ubuntu Server.
+
+![Screenshot_20241009-003249_Edge](https://github.com/user-attachments/assets/3a8759e0-c7d8-4752-a905-a1113cc3c059)
+
+
 ## Secure Shell ( SSH )
 
 > [!NOTE]
