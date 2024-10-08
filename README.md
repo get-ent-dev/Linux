@@ -38,7 +38,7 @@ Must update and upgrade server every login to make sure security update
 
 #### Adduser
 
-adduser > newuser
+> adduser newuser
 
 
 
