@@ -4,7 +4,7 @@
 
 ## Secure Shell ( SSH )
 
-### Port 22
+### Port 22 - SSH
 
 ssh username@ip address
 
