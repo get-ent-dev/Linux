@@ -1,5 +1,6 @@
 # Ubuntu-Server-Training
 
+
 ## Ubuntu Server Setup
 
 ## Secure Shell ( SSH )
@@ -18,6 +19,7 @@ Enter password
 > sudo passwd
 
 Enter **new password**
+
 
 ## Ubuntu Server Command Line ( Basic )
 
@@ -62,6 +64,7 @@ Enter newuser
 ### Reboot
 
 > sudo reboot
+
 
 ## Ubuntu Server Command Line ( Advance )
 
@@ -366,10 +369,27 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 
 > sudo rm **filename**
 
-
 ## Ubuntu Server Networking
 
 ### Firewall
+
+#### This is the basic operation of UFW (Uncomplicated FireWall).
+
+Enable UFW Firewall
+
+> sudo ufw enable
+
+Allow SSH
+
+> sudo ufw allow ssh
+
+Allow http
+
+> sudo ufw allow http
+
+Allow https
+
+> sudo ufw allow https
 
 You will configure your firewall to allow remote connections from your public IP on port **3389**. An RDP connection serves on TCP/IP port **3389**. To access the remote server over RDP, you must allow port **3389** in your firewall.
 
@@ -389,6 +409,21 @@ You have now enabled port **3389** to accept connections from your public IP. Ne
 
 ### Ping
 
+#### Basic Ping Usage
+
+The simplest form of the ping command is by following the syntax: **ping [options] destination**. Below are examples to get you started:
+
+##### Example 1: Pinging by IP Address
+
+> ping **ip address**
+
+This command will ping the device with the IP address and display the results.
+
+##### Example 2: Pinging by Hostname
+
+> ping **hostname.com**
+
+Similarly, you can ping by hostname which will resolve to an IP and perform the ping to that IP.
 
 ## Application
 
