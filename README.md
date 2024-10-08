@@ -22,8 +22,8 @@ Enter **new password**
 
 ### Ubuntu Server Update
 
-[!NOTE]
-Must update and upgrade server every login to make sure security update
+- [!NOTE]
+- Must update and upgrade server every login to make sure security update
 
 > sudo apt update
 
