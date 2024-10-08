@@ -14,6 +14,7 @@ sudo apt update
 sudo apt upgrade
 ### Update & Upgrade Combination
 sudo apt update && sudo apt upgrade -y
+
 -y will allow auto install upgrade
 ### User
 ### Reboot
