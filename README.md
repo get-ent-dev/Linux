@@ -440,7 +440,7 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 > sudo htop
 
 
-FULL NOTES ABOUT SERVERS
+# FULL NOTES ABOUT SERVERS
 
 https://www.server-world.info/
 
