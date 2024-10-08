@@ -4,7 +4,13 @@
 
 ## Secure Shell ( SSH )
 
-### Port 22 - SSH
+> [!NOTE]
+
+> Port 22 - SSH
+
+> Port 80 - http
+
+> Port 443 - https
 
 Using **Putty** or **Linux Terminal**
 
