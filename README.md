@@ -326,9 +326,15 @@ Press the **Connect** button. If you receive an alert that the **Remote Desktop 
 
 Press **Yes** if you receive the identity verification popup:
 
+![tVINlll](https://github.com/user-attachments/assets/aa1c2673-2d5b-4db0-ae7a-38166ed25327)
+
 Then, enter your remote server’s username (**sammy**) and the password you created for user **sammy** during the initial server setup. Press Ok.
 
+![9qRGWoV](https://github.com/user-attachments/assets/64920bfd-316a-42db-b120-15a9016919de)
+
 Once you have logged in, you should be able to access your Ubuntu Desktop environment:
+
+![LnkM9F0](https://github.com/user-attachments/assets/8516b373-b0e2-4325-8be2-26cc792d5029)
 
 Using RDP, you successfully connected to your remote Ubuntu server from your local machine. You can close it with the exit button when you have finished using your graphical desktop.
 
