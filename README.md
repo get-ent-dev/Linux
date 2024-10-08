@@ -6,7 +6,7 @@
 
 ### Port 22
 
-ssh <username>@<ip address>
+ssh '<username>'@'<ip address>'
 
 ## Ubuntu Server Command Line ( Basic )
 
