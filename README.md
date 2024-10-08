@@ -40,13 +40,13 @@ Must update and upgrade server every login to make sure security update
 
 Adding a user
 
-> sudo adduser newuser
+> sudo adduser **newuser**
 
 Granting a User Sudo Privileges
 
-> groups newuser
+> groups **newuser**
 
-> sudo usermod -aG sudo newuser
+> sudo usermod -aG sudo **newuser**
 
 ### Reboot
 
@@ -60,19 +60,21 @@ Granting a User Sudo Privileges
 
 ### Edit File
 
-> sudo nano filename
+> cd *to file directories*
+
+> sudo nano *filename**
 
 ### Making New File
 
-> sudo touch file name
+> sudo touch **filename**
 
 ### Making New Folder
 
-> sudo makdir folder name
+> sudo mkdir **foldername**
 
 ### Delete File
 
-> sudo rm file name
+> sudo rm **filename**
 
 
 ## Ubuntu Server Networking
@@ -88,7 +90,7 @@ Granting a User Sudo Privileges
 
 > sudo apt install virt-manager
 
-sudo reboot
+> sudo reboot
 
 ### Server Performance Monitoring
 
