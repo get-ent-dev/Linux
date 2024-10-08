@@ -36,7 +36,8 @@ Enter **new password**
 
 > sudo apt update && sudo apt upgrade -y
 
-**-y** will allow auto install upgrade and mean **Yes**
+> [!NOTE]
+> **-y** will allow auto install upgrade and mean **Yes**
 
 ### User
 
