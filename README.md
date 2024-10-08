@@ -438,3 +438,11 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 > sudo install htop
 
 > sudo htop
+
+
+FULL NOTES ABOUT SERVERS
+
+https://www.server-world.info/
+
+
+Copyright © 2024 Gadgelectronit of Malaysia ENT. All Rights Reserved.
