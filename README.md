@@ -6,7 +6,7 @@
 
 ### Port 22
 
-ssh '<username>'@'<ip address>'
+ssh username@ip address
 
 ## Ubuntu Server Command Line ( Basic )
 
@@ -38,19 +38,19 @@ sudo reboot
 
 ### Edit File
 
-sudo nano <filename>
+sudo nano filename
 
 ### Making New File
 
-sudo touch <file name>
+sudo touch file name
 
 ### Making New Folder
 
-sudo makdir <folder name>
+sudo makdir folder name
 
 ### Delete File
 
-sudo rm <file name>
+sudo rm file name
 
 
 ## Ubuntu Server Networking
