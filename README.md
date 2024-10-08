@@ -4,11 +4,16 @@
 
 ## Secure Shell ( SSH )
 
-### Port
+### Port 22
+
+ssh <username>@<ip address>
 
 ## Ubuntu Server Command Line ( Basic )
 
 ### Ubuntu Server Update
+
+Must update and upgrade server every login to make sure security update
+
 sudo apt update
 
 ### Ubuntu Server Upgrade
@@ -23,6 +28,8 @@ sudo apt update && sudo apt upgrade -y
 
 ### Reboot
 
+sudo reboot
+
 ## Ubuntu Server Command Line ( Advance )
 
 ### Swap File And Server Performance
@@ -31,11 +38,19 @@ sudo apt update && sudo apt upgrade -y
 
 ### Edit File
 
+sudo nano <filename>
+
 ### Making New File
+
+sudo touch <file name>
 
 ### Making New Folder
 
+sudo makdir <folder name>
+
 ### Delete File
+
+sudo rm <file name>
 
 
 ## Ubuntu Server Networking
@@ -49,5 +64,13 @@ sudo apt update && sudo apt upgrade -y
 
 ### Virtual Manager
 
+sudo apt install virt-manager
+
+sudo reboot
+
 ### Server Performance Monitoring
+
+sudo install htop
+
+sudo htop
 
