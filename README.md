@@ -75,6 +75,10 @@ Using **Putty** or **Linux Terminal**
 
 Enter password
 
+![OIP](https://github.com/user-attachments/assets/d88e1e98-a14a-4906-b50f-94964e11ce24)
+
+Sudo is a program for Unix-like computer operating systems that enables users to run programs with the security privileges of another user, by default the superuser. It originally stood for "superuser do", as that was all it did, and this remains its most common usage; however, the official Sudo project page lists it as "su 'do'". The current Linux manual pages for su define it as "substitute user", making the correct meaning of sudo "substitute user, do", because sudo can run a command as other users as well.
+
 ### Change sudo password
 
 > sudo passwd
