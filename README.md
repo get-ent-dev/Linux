@@ -135,6 +135,8 @@ Enter newuser
 
 ## Ubuntu Server Command Line ( Advance )
 
+![create-swap-file-linux](https://github.com/user-attachments/assets/33e5f07c-78e0-4420-93d4-92ddb3fc16fc)
+
 ### Swap File And Server Performance
 
 **Whaat is SwapFile?**
