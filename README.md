@@ -85,6 +85,8 @@ Sudo is a program for Unix-like computer operating systems that enables users to
 
 Enter **new password**
 
+![OIP (1)](https://github.com/user-attachments/assets/810899cf-379c-42bc-ac92-7fd3ec992c89)
+
 
 ## Ubuntu Server Command Line ( Basic )
 
