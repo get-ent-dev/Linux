@@ -62,6 +62,10 @@
 
 ## Secure Shell ( SSH )
 
+![secure-shell-protocol](https://github.com/user-attachments/assets/982742e4-efc4-4dee-9817-775b653f898f)
+
+The SSH protocol (also referred to as Secure Shell) is a method for secure remote login from one computer to another. It provides several alternative options for strong authentication, and it protects communications security and integrity with strong encryption. It is a secure alternative to the non-protected login protocols (such as telnet, rlogin) and insecure file transfer methods (such as FTP).
+
 > [!NOTE]
 > Port 22 - SSH
 
