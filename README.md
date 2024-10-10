@@ -1,5 +1,6 @@
 # Ubuntu-Server-Training
 
+![How-to-Install-Ubuntu-Server](https://github.com/user-attachments/assets/ad870ee3-e4ae-46fd-9d9d-63b55c377b47)
 
 ## Ubuntu Server Setup
 
@@ -306,6 +307,7 @@ Following the steps in this guide will give you some breathing room in cases tha
 
 If you are running into OOM (out of memory) errors, or if you find that your system is unable to use the applications you need, the best solution is to optimize your application configurations or upgrade your server.
 
+![Ubuntu-XRDP-Thumbnail](https://github.com/user-attachments/assets/a2513308-2bda-43f1-841a-a03ccb677eeb)
 
 ### Remote Desktop ( xRDP )
 
@@ -440,6 +442,8 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 
 ## Ubuntu Server Networking
 
+![how-a-firewall-works](https://github.com/user-attachments/assets/963acdb8-1ee0-4f04-a7f9-bb6fd976185e)
+
 ### Firewall
 
 #### This is the basic operation of UFW (Uncomplicated FireWall).
@@ -476,6 +480,8 @@ Verify the status of your **UFW** firewall:
 
 You have now enabled port **3389** to accept connections from your public IP. Next, you will test your local machine’s RDP connection to your remote server.
 
+![Ping-in-Linux-Step-7-Version-2](https://github.com/user-attachments/assets/a72e1280-4168-4850-a940-8216f3335c80)
+
 ### Ping
 
 #### Basic Ping Usage
@@ -496,6 +502,8 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 
 ## Application
 
+![OIP (2)](https://github.com/user-attachments/assets/784a3784-ba54-4a78-a7f1-4cd708e7327c)
+
 ### Virtual Manager
 
 > sudo apt install virt-manager
@@ -504,10 +512,13 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 
 ### Server Performance Monitoring
 
+![htop-ubuntu-18](https://github.com/user-attachments/assets/1a0f05d1-e195-4ce7-bdd9-4886e8671f83)
+
 > sudo install htop
 
 > sudo htop
 
+![OIP (3)](https://github.com/user-attachments/assets/8d8d2825-08c4-4848-bc19-2d15f0ab0b27)
 
 # FULL NOTES ABOUT SERVERS
 
