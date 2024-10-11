@@ -452,39 +452,61 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 
 #### This is the basic operation of UFW (Uncomplicated FireWall).
 
+UFW (uncomplicated firewall) is a firewall configuration tool that runs on top of iptables, included by default within Ubuntu distributions. It provides a streamlined interface for configuring common firewall use cases via the command line.
+
+This cheat sheet-style guide provides a quick reference to common UFW use cases and commands, including examples of how to allow and block services by port, network interface, and source IP address.
+
+Verify the status of your **UFW** firewall:
+
+> sudo ufw status
+
+Disable UFW Firewall
+
+> sudo ufw disable
+
 Enable UFW Firewall
 
 > sudo ufw enable
 
 Allow SSH
 
-> sudo ufw allow ssh
+> sudo ufw allow ssh / sudo ufw allow 22
 
 Allow http
 
-> sudo ufw allow http
+> sudo ufw allow http / sudo ufw allow 80
 
 Allow https
 
-> sudo ufw allow https
+> sudo ufw allow https / sudo allow 443
 
-You will configure your firewall to allow remote connections from your public IP on port **3389**. An RDP connection serves on TCP/IP port **3389**. To access the remote server over RDP, you must allow port **3389** in your firewall.
+Allow RDP
 
-First, find the public IP for your local machine:
+> sudo ufw allow 3389
 
-> curl ifconfig.me
+Block Ip Address
 
-Next, allow access to the RDP port **3389** on your remote server, replacing your_local_ip with the output of the last command:
+> sudo ufw deny from **ip address**
 
-> sudo ufw allow from your_local_ip/32 to any port 3389
+Allow Ip Address
 
-Verify the status of your **UFW** firewall:
+> sudo ufw allow from **ip address**
 
-> sudo ufw status
+UFW Status Numbered
 
-You have now enabled port **3389** to accept connections from your public IP. Next, you will test your local machine’s RDP connection to your remote server.
+> sudo ufw status numbered
 
-![Ping-in-Linux-Step-7-Version-2](https://github.com/user-attachments/assets/a72e1280-4168-4850-a940-8216f3335c80)
+UFW Delete Numbered
+
+> sudo ufw delete **numbered**
+
+Allow Connection From Ip Address to Specific Port
+
+> sudo ufw allow from **ip address** to any port **port numbered**
+
+**UFW MANUAL**
+
+> sudo man ufw
 
 ### Ping
 
