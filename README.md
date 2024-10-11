@@ -442,6 +442,10 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 
 ## Ubuntu Server Networking
 
+### Ubuntu Server Networking Command 
+
+![FB_IMG_1728645306420.jpg](https://github.com/user-attachments/assets/6a11c014-d90d-4e4e-9c1b-dd71da8ff922)
+
 ![how-a-firewall-works](https://github.com/user-attachments/assets/963acdb8-1ee0-4f04-a7f9-bb6fd976185e)
 
 ### Firewall
