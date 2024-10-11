@@ -548,6 +548,8 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 
 # FULL NOTES ABOUT SERVERS
 
+https://www.digitalocean.com/community/tutorials
+
 https://www.server-world.info/
 
 
