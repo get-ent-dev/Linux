@@ -115,7 +115,7 @@ Enter **new password**
 
 Adding a user
 
-> sudo adduser **newuser**
+> adduser **newuser**
 
 Enter **password for newuser**
 
@@ -123,9 +123,15 @@ Granting a User **Sudo Privileges**
 
 > groups **newuser**
 
-> sudo usermod -aG sudo **newuser**
+Add newuser as **ROOT / NON_ROOT**
 
-Enter newuser
+> usermod -aG sudo **newuser**
+
+Enter newuser as **NORMAL USER**
+
+> ssh **user**@**ip address**
+
+Enter newuser as **ROOT**
 
 > sudo su **newuser**
 
