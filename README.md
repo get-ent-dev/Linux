@@ -1,8 +1,82 @@
-# Ubuntu-Server-Training
+# Linux : Linux For Beginners
+
+## Background, Introduction and Preparation
+
+### 1. Course Overview ( pptx 1 )
+
+### 2. Background and Introduction
+
+In this lesson you will learn:
+
+- [What Linux is](https://www.youtube.com/watch?v=zA3vmx0GaO8)
+
+- [Brief history of Linux](https://www.youtube.com/watch?v=rrB13utjYV4)
+
+- [What a Linux Distributions or Linux Distro is](https://www.youtube.com/watch?v=VKNMI6cYOFk)
+
+- [Reasons Linux is used](https://www.youtube.com/watch?v=mAFMJ1LnQu8)
+
+You'll briefly be introduced to: RHEL (RedHat Enterprise Linux), Fedora, CentOS, AlmaLinux, Rocky Linux, Ubuntu, Debian, OpenSuse and SLES (SuSE Linux Enterprise Server).
+
+### 3. Linux Distributions ( pptx 2 )
+
+In this lesson, you will learn:
+
+- What is Linux Distribution or Linux Distro is
+
+- What the most common Linux Distro are
+
+- How to choose the right Linux Ditro
+
+Specifically, you'll learn about the most popular Linux Distros including RHEL (RedHat Enterprise Linux), AlmaLinux, Rocky Linux, CentOS and Ubuntu.
+
+Other Distros are mentioned, such as Linux Mint, Debian, Magento, OpenSUSE, Popl_OS, Fedora, Arch Linux, Fedora and Slackware.
+
+### 4. Installing Linux using WSL on Windows ( Windows Subsystem for Linux)
+
+In this lesson you will learn how to install, use and remove a Linux distro using Windows Subsystem for Linux ( WSL ) on Windows. You will also learn how to access the Linux files and directories using the Windows File Explorer.
+
+### 5. Installing VirtualBox on Windows
+
+In this lesson, you will learn how to install VirtualBox on Windows.
+
+### 6. When to Install Linux from Scratch or Manually
+
+In this lesson you will learn why you need to know how to install Linux manually from scracth.
+
+### 7. Installing AlmaLinux / Rocky Linux / RHEL from Scratch Manual Install
+
+In this lesson, you will learn how to install ALmalinux 9 and RHEL ( RedHat Enterprise Linux ) 9. ( pptx 3 )
+
+### 8. Logging In Directly to a Linux System
+
+In this lesson, you will learn how to connect directly to a Linux system installed on physical hardware or inside a virtual machine. Graphical and text-based logins will be covered.
+
+### 9. The Linux Directory Structure - Text
+
+In this lesson, you will learn about the Linux directory structure. You'll learn where different components of the operating system are located. You'll also learn how application can employ the same conventions for their directory structures.
+
+### 10. The Linux Directory Structure
+
+In this lesson, you will learn about the Linux directory structure. You'll learn where different components of the operating system are located. You'll also learn how application can empty the same conventions for their directory structures.
+
+### Review
+
+### Quiz 1
+
+## Files and Directories
+
+## Advanced Command Line Techniques
+
+## Summary
+
+## Bonus
+
+## Addendum - Connecting to a Linux Virtual Machine Over the Network
 
 ![How-to-Install-Ubuntu-Server](https://github.com/user-attachments/assets/ad870ee3-e4ae-46fd-9d9d-63b55c377b47)
 
-## Ubuntu Server Setup
+### Ubuntu Server Setup
 
 1. Insert the installation disc into the DVD drive and restart the computer. Then the language selection screen will be displayed as shown below, so select the language you want to use. In this example, we will proceed in English.
 
@@ -60,8 +134,33 @@
 
 ![Screenshot_20241009-003249_Edge](https://github.com/user-attachments/assets/3a8759e0-c7d8-4752-a905-a1113cc3c059)
 
+### User
 
-## Secure Shell ( SSH )
+#### Adduser
+
+Adding a user
+
+> adduser **newuser**
+
+Enter **password for newuser**
+
+Granting a User **Sudo Privileges**
+
+> groups **newuser**
+
+Add newuser as **ROOT / NON_ROOT**
+
+> usermod -aG sudo **newuser**
+
+Enter newuser as **NORMAL USER**
+
+> ssh **user**@**ip address**
+
+Enter newuser as **ROOT**
+
+> sudo su **newuser**
+
+### Secure Shell ( SSH )
 
 ![secure-shell-protocol](https://github.com/user-attachments/assets/982742e4-efc4-4dee-9817-775b653f898f)
 
@@ -89,64 +188,37 @@ Enter **new password**
 ![OIP (1)](https://github.com/user-attachments/assets/810899cf-379c-42bc-ac92-7fd3ec992c89)
 
 
-## Ubuntu Server Command Line ( Basic )
+### Ubuntu Server Command Line ( Basic )
 
-### Ubuntu Server Update
+#### Ubuntu Server Update
 
 > [!NOTE]
 > Must update and upgrade server every login to make sure security update
 
 > sudo apt update
 
-### Ubuntu Server Upgrade
+#### Ubuntu Server Upgrade
 
 > sudo apt upgrade
 
-### Update & Upgrade Combination
+#### Update & Upgrade Combination
 
 > sudo apt update && sudo apt upgrade -y
 
 > [!NOTE]
 > **-y** will allow auto install upgrade and mean **Yes**
 
-### User
-
-#### Adduser
-
-Adding a user
-
-> adduser **newuser**
-
-Enter **password for newuser**
-
-Granting a User **Sudo Privileges**
-
-> groups **newuser**
-
-Add newuser as **ROOT / NON_ROOT**
-
-> usermod -aG sudo **newuser**
-
-Enter newuser as **NORMAL USER**
-
-> ssh **user**@**ip address**
-
-Enter newuser as **ROOT**
-
-> sudo su **newuser**
-
-### Reboot
+#### Reboot
 
 > sudo reboot
 
-
-## Ubuntu Server Command Line ( Advance )
+### Ubuntu Server Command Line ( Advance )
 
 ![create-swap-file-linux](https://github.com/user-attachments/assets/33e5f07c-78e0-4420-93d4-92ddb3fc16fc)
 
 ### Swap File And Server Performance
 
-**Whaat is SwapFile?**
+**What is SwapFile?**
 
 Swap is a portion of hard drive storage that has been set aside for the operating system to temporarily store data that it can no longer hold in RAM. This lets you increase the amount of information that your server can keep in its working memory, with some caveats. The swap space on the hard drive will be used mainly when there is no longer sufficient space in RAM to hold in-use application data.
 
