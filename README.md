@@ -1,3 +1,5 @@
+![logo](https://github.com/user-attachments/assets/35210bee-7e01-44bc-bf31-0daa60c8b04b)
+
 # Linux : Linux For Beginners
 
 ## Background, Introduction and Preparation
