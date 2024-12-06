@@ -1,4 +1,4 @@
-![1](https://github.com/get-ent-dev/Linux/issues/31#issue-2724120548)
+!(https://github.com/get-ent-dev/Linux/issues/31#issue-2724120548)
 
 # Linux : Linux For Beginners
 
