@@ -1,7 +1,7 @@
 ![logo](https://github.com/user-attachments/assets/35210bee-7e01-44bc-bf31-0daa60c8b04b)
 
 `bash
-` echo "Hello, World!" `
+echo "Hello, World!" `
 
 
 # Linux : Linux For Beginners
