@@ -1,10 +1,5 @@
 ![logo](https://github.com/user-attachments/assets/35210bee-7e01-44bc-bf31-0daa60c8b04b)
 
-```bash
-echo "Hello, World!"
-```
-
-
 # Linux : Linux For Beginners
 
 ## Background, Introduction and Preparation
@@ -147,25 +142,35 @@ In this lesson, you will learn about the Linux directory structure. You'll learn
 
 Adding a user
 
-> adduser **newuser**
+```bash
+adduser user
+```
 
 Enter **password for newuser**
 
 Granting a User **Sudo Privileges**
 
-> groups **newuser**
+```bash
+groups user
+```
 
 Add newuser as **ROOT / NON_ROOT**
 
-> usermod -aG sudo **newuser**
+```bash
+usermod -aG sudo user
+```
 
 Enter newuser as **NORMAL USER**
 
-> ssh **user**@**ip address**
+```bash
+ssh user@<server ip address>
+```
 
 Enter newuser as **ROOT**
 
-> sudo su **newuser**
+```bash
+sudo su user
+```
 
 ### Secure Shell ( SSH )
 
@@ -188,7 +193,17 @@ Sudo is a program for Unix-like computer operating systems that enables users to
 
 ### Change sudo password
 
-> sudo passwd
+If on Root User,
+
+```bash
+passwd
+```
+
+If Normal User,
+
+```bash
+sudo passwd
+```
 
 Enter **new password**
 
@@ -202,22 +217,30 @@ Enter **new password**
 > [!NOTE]
 > Must update and upgrade server every login to make sure security update
 
-> sudo apt update
+```bash
+sudo apt update
+```
 
 #### Ubuntu Server Upgrade
 
-> sudo apt upgrade
+```bash
+sudo apt upgrade
+```
 
 #### Update & Upgrade Combination
 
-> sudo apt update && sudo apt upgrade -y
+```bash
+sudo apt update && sudo apt upgrade -y
+```
 
 > [!NOTE]
 > **-y** will allow auto install upgrade and mean **Yes**
 
 #### Reboot
 
-> sudo reboot
+```bash
+sudo reboot
+```
 
 ### Ubuntu Server Command Line ( Advance )
 
@@ -239,13 +262,17 @@ Before we begin, we can check if the system already has some swap space availabl
 
 We can see if the system has any configured swap by typing:
 
-> sudo swapon --show
+```bash
+sudo swapon --show
+```
 
 If you don’t get back any output, this means your system does not have swap space available currently.
 
 You can verify that there is no active swap using the free utility:
 
-> free -h
+```bash
+free -h
+```
 
 As you can see in the Swap row of the output, no swap is active on the system.
 
@@ -253,7 +280,9 @@ As you can see in the Swap row of the output, no swap is active on the system.
 
 Before we create our swap file, we’ll check our current disk usage to make sure we have enough space. Do this by entering:
 
-> df -h
+```bash
+df -h
+```
 
 The device with / in the Mounted on column is our disk in this case. We have plenty of space available in this example (only 1.4G used). Your usage will probably be different.
 
@@ -270,15 +299,21 @@ Since the server in our example has 1G of RAM, we will create a 1G file in this 
 > [!IMPORTANT]
 > Disable running swapfile
 
-> sudo swapoff -a
+```bash
+sudo swapoff -a
+```
 
 Creating swapfile
 
-> sudo fallocate -l 1G /swapfile
+```bash
+sudo fallocate -l 4G /swapfile
+```
 
 We can verify that the correct amount of space was reserved by typing:
 
-> ls -lh /swapfile
+```bash
+ls -lh /swapfile
+```
 
 Our file has been created with the correct amount of space set aside.
 
@@ -290,29 +325,41 @@ First, we need to lock down the permissions of the file so that only users with 
 
 Make the file only accessible to root by typing:
 
-> sudo chmod 600 /swapfile
+```bash
+sudo chmod 600 /swapfile
+```
 
 Verify the permissions change by typing:
 
-> ls -lh /swapfile
+```bash
+ls -lh /swapfile
+```
 
 As you can see, only the root user has the read and write flags enabled.
 
 We can now mark the file as swap space by typing:
 
-> sudo mkswap /swapfile
+```bash
+sudo mkswap /swapfile
+```
 
 After marking the file, we can enable the swap file, allowing our system to start using it:
 
-> sudo swapon /swapfile
+```bash
+sudo swapon /swapfile
+```
 
 Verify that the swap is available by typing:
 
-> sudo swapon --show
+```bash
+sudo swapon --show
+```
 
 We can check the output of the free utility again to corroborate our findings:
 
-> free -h
+```bash
+free -h
+```
 
 Our swap has been set up successfully and our operating system will begin to use it as necessary.
 
@@ -322,11 +369,15 @@ Our recent changes have enabled the swap file for the current session. However, 
 
 Back up the /etc/fstab file in case anything goes wrong:
 
-> sudo cp /etc/fstab /etc/fstab.bak
+```bash
+sudo cp /etc/fstab /etc/fstab.bak
+```
 
 Add the swap file information to the end of your /etc/fstab file by typing:
 
-> echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```bash
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+```
 
 Next we’ll review some settings we can update to tune our swap space
 
@@ -344,7 +395,9 @@ Values that are closer to 100 will try to put more data into swap in an effort t
 
 We can see the current swappiness value by typing:
 
-> cat /proc/sys/vm/swappiness
+```bash
+cat /proc/sys/vm/swappiness
+```
 
 For a Desktop, a swappiness setting of 60 is not a bad value. For a server, you might want to move it closer to 0.
 
@@ -352,11 +405,15 @@ We can set the swappiness to a different value by using the sysctl command.
 
 For instance, to set the swappiness to 10, we could type:
 
-> sudo sysctl vm.swappiness=10
+```bash
+sudo sysctl vm.swappiness=10
+```
 
 This setting will persist until the next reboot. We can set this value automatically at restart by adding the line to our /etc/sysctl.conf file
 
-> sudo nano /etc/sysctl.conf
+```bash
+sudo nano /etc/sysctl.conf
+```
 
 At the bottom, you can add:
 
@@ -370,15 +427,21 @@ Another related value that you might want to modify is the **vfs_cache_pressure*
 
 Basically, this is access data about the filesystem. This is generally very costly to look up and very frequently requested, so it’s an excellent thing for your system to cache. You can see the current value by querying the **proc** filesystem again:
 
-> cat /proc/sys/vm/vfs_cache_pressure
+```bash
+cat /proc/sys/vm/vfs_cache_pressure
+```
 
 As it is currently configured, our system removes inode information from the cache too quickly. We can set this to a more conservative setting like 50 by typing:
 
-> sudo sysctl vm.vfs_cache_pressure=50
+```bash
+sudo sysctl vm.vfs_cache_pressure=50
+```
 
 Again, this is only valid for our current session. We can change that by adding it to our configuration file like we did with our swappiness setting:
 
-> sudo nano /etc/sysctl.conf
+```bash
+sudo nano /etc/sysctl.conf
+```
 
 At the bottom, add the line that specifies your new value:
 
@@ -410,11 +473,15 @@ From the available options for Ubuntu, you will install the **Xfce** desktop env
 
 To begin, connect to your server using SSH and update the list of available packages using the following command:
 
-> sudo apt update
+```bash
+sudo apt update
+```
 
 Next, install the **xfce** and **xfce-goodies** packages on your server:
 
-> sudo apt install xfce4 xfce4-goodies -y
+```bash
+sudo apt install xfce4 xfce4-goodies -y
+```
 
 You will be prompted to choose a display manager, which is a program that manages graphical login mechanisms and user sessions. You can select any option from the list of available display managers, but this tutorial will use **gdm3**.
 
@@ -426,17 +493,23 @@ xrdp is an open-source implementation of the RDP server that allows RDP connecti
 
 To install xrdp, run the following command in the terminal:
 
-> sudo apt install xrdp -y
+```bash
+sudo apt install xrdp -y
+```
 
 After installing xrdp, verify the status of xrdp using **systemctl**:
 
-> sudo systemctl status xrdp
+```bash
+sudo systemctl status xrdp
+```
 
 This command will show the status as **active (running)**:
 
 If the status of xrdp is **not running**, you may have to start the service manually with this command:
 
-> sudo systemctl start xrdp
+```bash
+sudo systemctl start xrdp
+```
 
 After executing the above command, verify the status again to ensure xrdp is in a **running** state.
 
@@ -450,7 +523,9 @@ In this step, you will review the default configuration of xrdp, which is stored
 
 Open the file in **nano** text editor or any editor of your choice:
 
-> sudo nano /etc/xrdp/xrdp.ini
+```bash
+sudo nano /etc/xrdp/xrdp.ini
+```
 
 The configuration file contains different sections:
 
@@ -467,17 +542,23 @@ Save and close the file when finished.
 
 Now move to your user’s home directory if you are not there already:
 
-> cd ~
+```bash
+cd ~
+```
 
 Next, you will create a **.xsession** file under **/home/sammy** and add the **xfce4-session** as the session manager to use upon login:
 
-> echo "xfce4-session" | tee .xsession
+```bash
+echo "xfce4-session" | tee .xsession
+```
 
 **tee** writes the echoed string **"xfce4-session"** to the file **.xsession**. The above configuration ensures that **xfce4-session** is used as a session manager upon graphical login request. As a result of installing **xfce** as your desktop environment, **xfce4-session** serves as its session manager. If you don’t include this information in the **.xsession** file, no session manager is chosen, and the RDP session will fail to connect to the graphical display.
 
 Restart the xrdp server:
 
-> sudo systemctl restart xrdp
+```bash
+sudo systemctl restart xrdp
+```
 
 #### Step 4 — Testing the RDP Connection
 
@@ -509,21 +590,31 @@ Using RDP, you successfully connected to your remote Ubuntu server from your loc
 
 ### Edit File
 
-> cd **to file directories**
+```bash
+cd <to file directories>
+```
 
-> sudo nano **filename**
+```bash
+sudo nano <<filename>
+```
 
 ### Making New File
 
-> sudo touch **filename**
+```bash
+sudo touch <filename>
+```
 
 ### Making New Folder
 
-> sudo mkdir **foldername**
+```bash
+sudo mkdir <foldername>
+```
 
 ### Delete File
 
-> sudo rm **filename**
+```bash
+sudo rm -rf <filename>
+```
 
 ## Ubuntu Server Networking
 
@@ -543,55 +634,93 @@ This cheat sheet-style guide provides a quick reference to common UFW use cases 
 
 Verify the status of your **UFW** firewall:
 
-> sudo ufw status
+```bash
+sudo ufw status
+```
 
 Disable UFW Firewall
 
-> sudo ufw disable
+```bash
+sudo ufw disable
+```
 
 Enable UFW Firewall
 
-> sudo ufw enable
+```bash
+sudo ufw enable
+```
 
 Allow SSH
 
-> sudo ufw allow ssh / sudo ufw allow 22
+```bash
+sudo ufw allow ssh
+```
+Or can be use,
+```bash
+sudo ufw allow 22
+```
 
 Allow http
 
-> sudo ufw allow http / sudo ufw allow 80
+```bash
+sudo ufw allow http
+```
+Or can be use,
+```bash
+sudo ufw allow 80
+```
 
 Allow https
 
-> sudo ufw allow https / sudo allow 443
+```bash
+sudo ufw allow https
+```
+Or can be use,
+```bash
+sudo allow 443
+```
 
 Allow RDP
 
-> sudo ufw allow 3389
+```bash
+sudo ufw allow 3389
+```
 
 Block Ip Address
 
-> sudo ufw deny from **ip address**
+```bash
+sudo ufw deny from <ip address>
+```
 
 Allow Ip Address
 
-> sudo ufw allow from **ip address**
+```bash
+sudo ufw allow from <ip address>
+```
 
 UFW Status Numbered
 
-> sudo ufw status numbered
+```bash
+sudo ufw status numbered
+```
 
 UFW Delete Numbered
 
-> sudo ufw delete **numbered**
+```bash
+sudo ufw delete <numbered>
+```
 
 Allow Connection From Ip Address to Specific Port
 
-> sudo ufw allow from **ip address** to any port **port numbered**
+```bash
+sudo ufw allow from <ip address> to any port <port numbered>
+```
 
 **UFW MANUAL**
 
-> sudo man ufw
+```bash
+sudo man ufw
+```
 
 ### Ping
 
@@ -601,13 +730,17 @@ The simplest form of the ping command is by following the syntax: **ping [option
 
 ##### Example 1: Pinging by IP Address
 
-> ping **ip address**
+```bash
+ping <ip address>
+```
 
 This command will ping the device with the IP address and display the results.
 
 ##### Example 2: Pinging by Hostname
 
-> ping **hostname.com**
+```bash
+ping <hostname.com>
+```
 
 Similarly, you can ping by hostname which will resolve to an IP and perform the ping to that IP.
 
@@ -617,17 +750,25 @@ Similarly, you can ping by hostname which will resolve to an IP and perform the 
 
 ### Virtual Manager
 
-> sudo apt install virt-manager
+```bash
+sudo apt install virt-manager
+```
 
-> sudo reboot
+```bash
+sudo reboot
+```
 
 ### Server Performance Monitoring
 
 ![htop-ubuntu-18](https://github.com/user-attachments/assets/1a0f05d1-e195-4ce7-bdd9-4886e8671f83)
 
-> sudo install htop
+```bash
+sudo install htop
+```
 
-> sudo htop
+```bash
+sudo htop
+```
 
 ![OIP (3)](https://github.com/user-attachments/assets/8d8d2825-08c4-4848-bc19-2d15f0ab0b27)
 
