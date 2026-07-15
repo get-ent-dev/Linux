@@ -1,124 +1,108 @@
 <div align="center">
   <img src="https://github.com/user-attachments/assets/35210bee-7e01-44bc-bf31-0daa60c8b04b" alt="Linux Logo" width="150" />
 
-  # Linux: Linux For Beginners
+  # Linux for Beginners
 
   ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
   ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
   ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 </div>
 
-Welcome to the **Linux for Beginners** course guide. This repository contains the complete syllabus, command references, and step-by-step server configuration guides to get you up and running with Linux environments.
+A **complete learning module** for absolute beginners: syllabus, lessons, labs, quizzes, and cheatsheets for Ubuntu-focused Linux skills — from first shell to a small hardened lab server.
 
 ---
 
-<details>
-<summary><b>📖 Table of Contents</b> (Click to expand)</summary>
+## Start here
 
-1.[Course Overview & Syllabus](#course-overview--syllabus)
-2. [Ubuntu Server Setup](#ubuntu-server-setup)
-3. [User Management](#user-management)
-4. [Secure Shell (SSH)](#secure-shell-ssh)
-5. [Basic & Advanced Command Line](#basic--advanced-command-line)
-    - [Basic Operations](#basic-server-commands)
-    - [Swap File & Server Performance](#swap-file-and-server-performance)
-6. [File & Directory Operations](#file--directory-operations)
-7.[Remote Desktop (xRDP)](#remote-desktop-xrdp)
-8. [Ubuntu Server Networking & Firewall](#ubuntu-server-networking)
-9. [Applications & Monitoring](#applications)
-10. [References](#full-notes-about-servers)
+1. Read **[Getting Started](docs/00-getting-started.md)** (environment choice + progress checklist)
+2. Follow modules **01 → 12** in order
+3. Complete labs and quizzes as you go
+4. Finish the **[Capstone](docs/modules/12-capstone.md)** and run `scripts/verify-lab.sh`
 
-</details>
+Content audit (what was broken and how it was fixed): **[docs/AUDIT.md](docs/AUDIT.md)**
 
 ---
 
-## Course Overview & Syllabus
+## Course map
 
-### Background, Introduction, and Preparation
+| # | Module | Lab / Quiz |
+| ---: | --- | --- |
+| 0 | [Getting Started](docs/00-getting-started.md) | — |
+| 1 | [Linux Fundamentals](docs/modules/01-linux-fundamentals.md) | [Quiz 01](docs/quizzes/quiz-01-fundamentals.md) |
+| 2 | [Install Environments (WSL / VirtualBox)](docs/modules/02-install-environments.md) | [Lab 01](docs/labs/lab-01-first-shell.md) |
+| 3 | [Ubuntu Server Setup](docs/modules/03-ubuntu-server-setup.md) | — |
+| 4 | [Users & Permissions](docs/modules/04-users-and-permissions.md) | [Lab 02](docs/labs/lab-02-users-and-sudo.md) |
+| 5 | [SSH & Remote Access](docs/modules/05-ssh-and-remote-access.md) | — |
+| 6 | [Command Line Basics](docs/modules/06-command-line-basics.md) | — |
+| 7 | [Files & Directories](docs/modules/07-files-and-directories.md) | [Lab 03](docs/labs/lab-03-filesystem-tour.md) · [Quiz 02](docs/quizzes/quiz-02-cli-and-files.md) |
+| 8 | [Swap & Performance](docs/modules/08-swap-and-performance.md) | — |
+| 9 | [xRDP Remote Desktop](docs/modules/09-xrdp-remote-desktop.md) *(optional)* | — |
+| 10 | [Networking & Firewall (UFW)](docs/modules/10-networking-and-firewall.md) | [Lab 04](docs/labs/lab-04-firewall-and-ssh.md) |
+| 11 | [Apps & Monitoring](docs/modules/11-apps-and-monitoring.md) | [Quiz 03](docs/quizzes/quiz-03-server-ops.md) |
+| 12 | [Capstone](docs/modules/12-capstone.md) | [Lab 05](docs/labs/lab-05-capstone.md) |
 
-**1. Course Overview (pptx 1)**
-
-**2. Background and Introduction**
-In this lesson you will learn:
-*[What Linux is](https://www.youtube.com/watch?v=zA3vmx0GaO8)
-* [Brief history of Linux](https://www.youtube.com/watch?v=rrB13utjYV4)
-* [What a Linux Distribution or Linux Distro is](https://www.youtube.com/watch?v=VKNMI6cYOFk)
-* [Reasons Linux is used](https://www.youtube.com/watch?v=mAFMJ1LnQu8)
-
-> *Briefly introduces:* RHEL (RedHat Enterprise Linux), Fedora, CentOS, AlmaLinux, Rocky Linux, Ubuntu, Debian, OpenSUSE, and SLES (SUSE Linux Enterprise Server).
-
-**3. Linux Distributions (pptx 2)**
-Learn what a Linux Distro is, the most common distros, and how to choose the right one (RHEL, AlmaLinux, Rocky Linux, CentOS, Ubuntu, Mint, Debian, Pop!_OS, Arch Linux, etc.).
-
-**4. Installing Linux using WSL on Windows**
-Learn how to install, use, and remove a Linux distro using Windows Subsystem for Linux (WSL) and access Linux files via Windows File Explorer.
-
-**5. Installing VirtualBox on Windows**
-Learn how to install VirtualBox on Windows for running virtual machines.
-
-**6. When to Install Linux from Scratch**
-Understand why and when manual installation from scratch is necessary.
-
-**7. Installing AlmaLinux / Rocky Linux / RHEL**
-Manual install guide for AlmaLinux 9 and RHEL 9 (pptx 3).
-
-**8. Logging In Directly to a Linux System**
-Connecting to Linux via physical hardware or virtual machines (Graphical and text-based logins).
-
-**9 & 10. The Linux Directory Structure**
-Learn where OS components are located and how applications employ conventions for directory structures.
+**Cheatsheets:** [Commands](docs/cheatsheets/commands.md) · [UFW](docs/cheatsheets/ufw.md)
 
 ---
 
-## Ubuntu Server Setup
+## What you will learn
 
-![How-to-Install-Ubuntu-Server](https://github.com/user-attachments/assets/ad870ee3-e4ae-46fd-9d9d-63b55c377b47)
+- What Linux and distributions are, and how the filesystem is organized
+- How to practice safely with **WSL** or **VirtualBox**
+- How to install and maintain **Ubuntu Server**
+- Users, `sudo`, passwords, and SSH remote login
+- Everyday Bash: navigation, files, permissions, pipes, `apt`
+- Server essentials: swap, UFW firewall, `htop` monitoring
+- Optional GUI remote access with **xRDP**
+- A capstone lab that ties the skills together
 
-### Step-by-Step Installation
-
-1. **Select Language**: Insert the installation media and restart. Select your preferred language (e.g., English).
-   <br><img src="https://github.com/user-attachments/assets/e92e03ae-4470-4940-af40-91c5188a188a" width="600"/>
-2. **Keyboard Layout**: Use <kbd>Tab</kbd> to switch items, <kbd>Enter</kbd> to open lists, and arrow keys to select.
-   <br><img src="https://github.com/user-attachments/assets/1783f44a-838f-451d-9694-fa66ecffb88d" width="600"/>
-3. **Server Configuration**: Select the general server configuration (top) or the minimal set (bottom).
-   <br><img src="https://github.com/user-attachments/assets/452fd03e-766b-4df5-808a-1476721c3698" width="600"/>
-4. **Network Connections**: Obtain automatically via DHCP or set manually.
-   <br><img src="https://github.com/user-attachments/assets/c5916a6d-7be2-4f24-901d-9cf9f42bda54" width="600"/>
-5. **Proxy Server**: Enter if necessary; otherwise, leave blank.
-   <br><img src="https://github.com/user-attachments/assets/f8534141-772f-4a41-b234-eedfd99de0dd" width="600"/>
-6. **Mirror Server**: Used for package updates. Usually auto-selects the best nearby mirror.
-   <br><img src="https://github.com/user-attachments/assets/142f42d1-9459-4b42-ae8b-af65cea0aba1" width="600"/>
-7. **Storage Settings**: Set disk partition layouts. Defaults are usually fine for beginners.
-   <br><img src="https://github.com/user-attachments/assets/e4c9d898-802a-4765-a9f4-7f1708c68fd9" width="600"/>
-8. **Confirm Storage**: Choose **Done** to confirm partitions.
-   <br><img src="https://github.com/user-attachments/assets/e2e5ff49-ca54-46f1-838e-8ea036d0351c" width="600"/>
-9. **Install Confirmation**: Click **Continue**. *Warning: Existing data will be overwritten.*
-   <br><img src="https://github.com/user-attachments/assets/48cb7523-403c-43d1-9455-93c0726b9b4e" width="600"/>
-10. **Administrator Account**: Enter a name, username, and password.
-    <br><img src="https://github.com/user-attachments/assets/04cf4cae-1038-41c1-ac6e-dde3605ea5ac" width="600"/>
-11. **SSH Setup**: Choose to install an SSH server if you plan to access the server remotely.
-    <br><img src="https://github.com/user-attachments/assets/a5fe542d-0ae4-416a-a608-54a536451511" width="600"/>
-12. **Server Snaps**: Select any extra software you need. Leave blank for a clean install.
-    <br><img src="https://github.com/user-attachments/assets/0b5a3676-70f9-4db8-adc3-52a6ac533587" width="600"/>
-13. **Complete**: When done, select **Reboot Now**.
-    <br><img src="https://github.com/user-attachments/assets/38305255-2399-4c2a-a4fc-1fbada7059c0" width="600"/>
-14. **Login**: After rebooting, authenticate with your new credentials.
-    <br><img src="https://github.com/user-attachments/assets/3a8759e0-c7d8-4752-a905-a1113cc3c059" width="600"/>
+Estimated guided time: **10–14 hours**.
 
 ---
 
-## User Management
+## Repository layout
 
-| Task | Command |
-| :--- | :--- |
-| **Add a new user** | `sudo adduser <username>` |
-| **Check user groups** | `groups <username>` |
-| **Grant Sudo privileges** | `sudo usermod -aG sudo <username>` |
-| **Login as normal user (Remote)** | `ssh <username>@<ip_address>` |
-| **Switch to Root user** | `sudo su -` |
+```text
+README.md                 ← you are here (course hub)
+docs/
+  00-getting-started.md
+  AUDIT.md
+  modules/                ← lessons 01–12
+  labs/                   ← hands-on practice
+  quizzes/                ← assessments + answer keys
+  cheatsheets/            ← quick reference
+scripts/
+  verify-lab.sh           ← optional capstone checks
+```
 
-### Changing Passwords
+---
 
-If you are logged in as the **Root** user:
+## Capstone verification
+
+On your lab machine (after cloning or copying the script):
+
 ```bash
-passwd <username>
+bash scripts/verify-lab.sh
+```
+
+Checks for OS identity, SSH service, swap, UFW, `htop`, and `~/SERVER_NOTES.md`.
+
+---
+
+## References
+
+- [DigitalOcean Community Tutorials](https://www.digitalocean.com/community/tutorials)
+- [Server World](https://www.server-world.info/)
+- [Ubuntu Server documentation](https://ubuntu.com/server/docs)
+- [UFW community help](https://help.ubuntu.com/community/UFW)
+- Intro videos linked from [Module 01](docs/modules/01-linux-fundamentals.md)
+
+---
+
+## About this rebuild
+
+The previous single `README.md` was truncated mid-lesson and several syllabus sections were empty placeholders. This revision turns the material into a navigable learning module with corrected commands, filled lessons, labs, quizzes, and a capstone. See [docs/AUDIT.md](docs/AUDIT.md) for the full findings.
+
+---
+
+Copyright © 2024–2026 Gadgelectronit of Malaysia ENT. All Rights Reserved.
